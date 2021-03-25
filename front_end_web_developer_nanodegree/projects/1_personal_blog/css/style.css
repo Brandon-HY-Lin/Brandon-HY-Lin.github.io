@@ -1,0 +1,357 @@
+@import url(blog-post.css);
+
+
+/* global styles and page layout */
+body {
+	margin: 0;
+	background: rgb(245, 238, 224);
+	color: #0f0f0f;
+}
+
+a {
+	text-decoration: none;
+	color: #0f0f0f;
+}
+
+a.active, a:hover {
+	text-decoration: underline;
+	color: rgb(0, 170, 28);;
+}
+
+nav {
+	z-index: 1;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 100px 50px 1fr 50px;
+	grid-template-areas:
+	"hd hd"
+	"nav nav"
+	"main main"
+	"ft ft";
+	justify-content: center;
+}
+
+
+
+header {
+	grid-area: hd;
+	display:flex;
+	
+	/* align flex items at the center of the main axis. 
+		(w/o space between items)
+		
+		explanation: https://openclassrooms.com/en/courses/5295881-create-web-page-layouts-with-css/5415181-align-items-and-justify-content
+	*/
+	justify-content: center;
+	
+	/*
+		align flex items at the ceter of the cross axis.
+		explanation: https://openclassrooms.com/en/courses/5295881-create-web-page-layouts-with-css/5415181-align-items-and-justify-content
+	*/
+	align-items: center;
+	flex-direction: column;
+}
+
+.header-title {
+	/* like std::string::to_upper()*/
+	text-transform: uppercase;
+	font-weight: lighter;
+}
+
+.header-subtitle {
+	font-weight: lighter;
+	
+	/* 1.2x of its parent*/
+	font-size: 1.2em;
+}
+
+
+
+nav {
+	grid-area: nav;
+	display: flex;
+	
+	/* 	padding-top: 1x of root
+		padding-bottom: 0
+	*/
+	padding: 1rem 0;
+	
+	justify-content: space-evenly;
+	align-items: center;
+	
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	
+	/* 1x of root*/
+	margin: 1rem;
+}
+
+.sidebar-pages {
+	display: flex;
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+.nav-sidebar {
+	display: none;
+}
+
+.nav-link {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #0f0f0f;
+}
+
+.nav-link:hover, .nav-link.active {
+	text-decoration: underline;
+	color: rgb(0, 170, 28);
+}
+
+.sidebar-list {
+	list-style: none;
+	line-height: 1.7;
+}
+
+.sidebar-list-item {
+	/*
+		negative margin: closer to left
+		explanation: https://www.quirksmode.org/blog/archives/2020/02/negative_margin.html
+	*/
+	margin-left: -2.5rem;
+}
+#main {
+	grid-area: main;
+	display: grid;
+	grid-template-columns: 1fr;
+	
+	/*
+		explanation 1: https://stackoverflow.com/questions/51285308/how-do-min-content-and-max-content-work
+		explanation 2: https://o7planning.org/12557/the-keywords-min-content-max-content-fit-content-stretch-in-css
+	*/
+	grid-template-rows: min-content min-content;
+	grid-template-areas:
+	"post-top"
+	"post-middle";
+}
+
+#post-1 {
+	grid-area: post-top;
+}
+
+#post-2 {
+	grid-area: post-middle;
+}
+
+.blog-img {
+	width: 100%;
+	
+	/*
+		object-fit: resize image/video to its container.
+		explanation: https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
+	*/
+	object-fit: cover;
+}
+
+.blog-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem;
+	box-shadow: 2px 2px 6px grey;
+	background: white;
+	border-radius: 1%;
+	max-width: 90%;
+}
+
+.blog-card-text {
+	padding: 1rem;
+}
+
+.blog-card:hover {
+	box-shadow: 2px 2px 6px 2px grey;
+}
+
+
+
+.button {
+	padding: 6px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: rgb(37, 76, 150);
+	border: 1px solid rgb(37, 76, 150);
+	border-radius: 8px;
+	font-size: 0.7em;
+}
+
+.btn-active, .button:hover {
+	box-shadow: 2px 2px 2px #a6d766;
+	text-decoration: none;
+}
+
+
+
+footer {
+	grid-area: ft;
+	text-align: center;
+}
+
+/* responsive layout */
+@media(min-width: 900px) {
+	.container {
+		/* display: grid;*/
+		grid-template-columns: repeat(8, 1fr); /*50% 50%;*/
+		grid-template-rows: 100px 1fr 50px; /* 100px 50px 1fr 50px; */
+		/* 
+		grid-template-areas:
+		"hd hd"
+		"nav nav"
+		"main main"
+		"ft ft";
+		*/
+	
+		grid-template-areas:
+		"hd hd hd hd hd hd hd hd"
+		"main main main main main main nav nav"
+		"ft ft ft ft ft ft ft ft";
+		/* justify-content: center; */
+	}
+
+	/*
+	#main {
+		grid-area: main;
+		display: grid;
+		grid-template-columns: 1fr;
+	
+		grid-template-rows: min-content min-content;
+		grid-template-areas:
+		"post-top"
+		"post-middle";
+	}
+	*/
+	
+	#main {
+		grid-template-rows: 50% 50%;
+	}
+
+
+
+	/*
+	nav {
+		grid-area: nav;
+		display: flex;
+
+		padding: 1rem 0;
+	
+		justify-content: space-evenly;
+		align-items: center;
+	
+		border-top: 1px solid grey;
+		border-bottom: 1px solid grey;
+	
+		margin: 1rem;
+	}
+	*/
+	
+	nav {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		border: none;
+		margin: 2rem 0;
+	}
+
+	.nav-hide {
+		display: none;
+	}
+
+	/*
+	.nav-sidebar {
+		display: none;
+	}
+	*/
+	
+	.nav-sidebar {
+		display: block;
+	}
+	
+	/*
+	.sidebar-pages {
+		display: flex;
+		width: 100%;
+		justify-content: space-evenly;
+	}
+	*/
+	
+	.sidebar-pages {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		margin: 0.5rem 0 2rem;
+		border-top: 1px solid grey;
+		border-bottom: 1px solid grey;
+	}
+
+
+	/*
+	.nav-link {
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #0f0f0f;
+	}
+	*/
+	
+	.nav-link {
+		padding: 1rem;
+	}
+
+	/*
+	.sidebar-list-item {
+		margin-left: -2.5rem;
+	}
+	*/
+	
+	.sidebar-list-item {
+		border-bottom: 1px dotted grey;
+	}
+
+	/*
+	.blog-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 1rem;
+		box-shadow: 2px 2px 6px grey;
+		background: white;
+		border-radius: 1%;
+		max-width: 90%;
+	}
+	*/
+	
+	.blog-card {
+		flex-direction: row;
+		margin: 3rem;
+		padding: 0;
+	}
+
+	.blog-card-text {
+		padding: 2rem; /*1rem;*/
+	}
+	
+	/*
+	.blog-img {
+		width: 100%;
+
+		object-fit: cover;
+	}
+	*/
+	
+	.blog-img {
+		max-width: 50%;
+		height: 100%;
+		object-fit:cover;
+	}
+}

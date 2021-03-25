@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>Tennis Game</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1"
+            name="viewport" >
+
+        <style>
+			@import url('../css/style.css');
+            @import url('../css/blog-post.css');
+			/* @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Roboto:wght@500&family=Ubuntu:wght@300&display=swap'); */
+        </style>
+    </head>
+    <body>
+       <div class="blog-container">
+	   		<header class="box">
+				<h1 class="header-title">Reinforcement Learning</h1>
+				<h2 class="header-subtitle">Tennis Game</h2>
+			</header>
+			
+			<!-- "nav" semantic element 
+            
+                explanation: https://www.w3schools.com/html/html5_semantic_elements.asp
+            -->
+			<nav class="box sidebar">
+				<div class="sidebar-pages">
+					<a href="../index.html" class="nav-link">Home</a>
+					<a href="blog-post-speech-recognition.html" class="nav-link">Speech Recognition</a>
+				</div>
+			</nav>
+
+            <!-- "article" semantic element 
+                
+                explanation: https://www.w3schools.com/html/html5_semantic_elements.asp
+            -->
+			<article class="box">
+				<div class="blog-post">
+					<h2>Reinforcement Learning</h2>
+					<h4 class="blog-date">March 24, 2021</h4>
+					<img src="../images/tennis_game.gif" alt="Tennis Game" class="blog-post-img">
+					<p class="blog-intro">Tennis Game</p>
+					<p>Teach 2 computers to play tennis in tandem.</p>
+					<p>All is done by MADDPG algorithm.</p>
+					<blockquote>
+						Two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1. If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01. 
+					</blockquote>
+					<p>You can download the example from my <a href="https://github.com/Brandon-HY-Lin/deep-reinforcement-learning/tree/master/p3_collab-compet">Github</a> repository.</p>
+				</div>
+			</article>
+			<div class="box" id="bio">
+				<div class="box bio-image-container">
+					<img src="../images/brandon_lin.jpg" alt="Picture of Brandon Lin" id="bio-icon">
+				</div>
+				<div class="box bio-description">
+					<h3 class="bio-header">Author</h3>
+					<h4 class="blog-date">Brandon Lin, machine learning enthusiast.</h4>
+					<p>Brandon Lin is a software engineer from Taipei, Taiwan.</p>
+				</div>
+			</div>
+	   		<div class="box" id="share">
+				
+				<a href="https://github.com/Brandon-HY-Lin" class="social-link">
+					<img src="../images/GitHub-Mark-32px.png" alt="GitHub logo" class="social-icon">
+				</a>
+			</div>
+			<footer class="box">
+				Made by <a href="https://github.com/Brandon-HY-Lin">Brandon Lin</a>
+			</footer>
+	   </div>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <title>Speech Recognition</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1"
+            name="viewport" >
+
+        <style>
+			@import url('../css/style.css');
+            @import url('../css/blog-post.css');
+			/* @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Roboto:wght@500&family=Ubuntu:wght@300&display=swap'); */
+        </style>
+    </head>
+    <body>
+       <div class="blog-container">
+	   		<header class="box">
+				<h1 class="header-title">Speech Recognition</h1>
+				<h2 class="header-subtitle">Using NLP to implement <strong>Hi Siri!</strong> command</h2>
+			</header>
+			
+			<!-- "nav" semantic element 
+            
+                explanation: https://www.w3schools.com/html/html5_semantic_elements.asp
+            -->
+			<nav class="box sidebar">
+				<div class="sidebar-pages">
+					<a href="../index.html" class="nav-link">Home</a>
+					<a href="blog-post.html" class="nav-link">Reinforcement Learning</a>
+				</div>
+			</nav>
+
+            <!-- "article" semantic element 
+                
+                explanation: https://www.w3schools.com/html/html5_semantic_elements.asp
+            -->
+			<article class="box">
+				<div class="blog-post">
+					<h2>Speech Recognition using DNN network</h2>
+					<h4 class="blog-date">March 30, 2021</h4>
+					<img src="../images/speech_recognition.png" alt="Tennis Game" class="blog-post-img">
+					<p class="blog-intro">Flow to detect voice command</p>
+					<p>Using a deep neural network that functions as part of an end-to-end automatic speech recognition (ASR) pipeline!</p>
+					<p>Use CNN network to achieve voice command.</p>
+					<blockquote>
+						We begin by investigating the <a href="http://www.openslr.org/12/">LibriSpeech dataset</a> that will be used to train and evaluate your models. Your algorithm will first convert any raw audio to feature representation.
+					</blockquote>
+					<p>You can download the example from my <a href="https://github.com/Brandon-HY-Lin/AIND-VUI-Capstone">Github</a> repository.</p>
+				</div>
+			</article>
+			<div class="box" id="bio">
+				<div class="box bio-image-container">
+					<img src="../images/brandon_lin.jpg" alt="Picture of Brandon Lin" id="bio-icon">
+				</div>
+				<div class="box bio-description">
+					<h3 class="bio-header">Author</h3>
+					<h4 class="blog-date">Brandon Lin, machine learning enthusiast.</h4>
+					<p>Brandon Lin is a software engineer from Taipei, Taiwan.</p>
+				</div>
+			</div>
+	   		<div class="box" id="share">
+				
+				<a href="https://github.com/Brandon-HY-Lin" class="social-link">
+					<img src="../images/GitHub-Mark-32px.png" alt="GitHub logo" class="social-icon">
+				</a>
+			</div>
+			<footer class="box">
+				Made by <a href="https://github.com/Brandon-HY-Lin">Brandon Lin</a>
+			</footer>
+	   </div>
+    </body>
+</html>

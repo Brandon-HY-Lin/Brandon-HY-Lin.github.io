@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Brandon Lin's Personal Blog</title>
+        <meta
+        content="width=device-width, initial-scale=1" 
+        name="viewport" 
+        >
+
+        <style>
+            @import url('./css/style.css');
+            /* @import url('https://fonts.googleapis.com/css2?family=Pangolin&family=Roboto:wght@500&family=Ubuntu:wght@300&display=swap'); */
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="box">
+                <h1 class="header-title">Brandon Lin's Blog</h1>
+                <h2 class="header-subtitle">Blogs about Deep Learning/Machine Learning</h2>
+            </header>
+
+            <nav class="box">
+                <a href="pages/blog-post.html" class="nav-link nav-hide">Latest Post</a>
+				<a href="pages/blog-post-speech-recognition.html" class="nav-link nav-hide">Speech Recognition</a>
+				<div class="nav-sidebar">
+					<div class="sidebar-pages">
+						<!-- # means current page -->
+						<a href="#" class="nav-link">Home</a>
+						<a href="pages/blog-post-speech-recognition.html" class="nav-link">Speech Recognition</a>
+					</div>
+					<h2 class="sidebar-header">Latest Posts</h2>
+					<ul class="sidebar-list">
+                        <li class="sidebar-list-item"><a href="pages/blog-post.html">Reinforcement Learning</a></li>
+                        <li class="sidebar-list-item"><a href="pages/blog-post-speech-recognition.html">Speech Recognition</a></li>
+                        <li class="sidebar-list-item"><a href="pages/blog-post.html">Reinforcement Learning</a></li>
+                    </ul>
+				</div>
+            </nav>
+			<div class="box" id="main">
+				<div class="box blog-card" id="post-1">
+					<img src="images/tennis_game.gif" alt="Reinforcement Learning: Tennis Game" class=blog-img>
+                    <div class="blog-card-text">
+                        <h2 class="blog-title">Reinforcement Learning </h2>
+						<h4 class="blog-date">March 23, 2021</h4>
+                        <p>Teach 2 computers to play <em>tennis game</em> automatically.</p>
+                        <a href="pages/blog-post.html" class="button">Read more &rarr;</a> 
+                    </div>                 
+                </div>
+                <div class="box blog-card" id="post-2">
+                    <img src="images/speech_recognition.png" alt="Speech Recognition" class="blog-img">
+                    <div class="blog-card-text">
+                        <h2 class="blog-title">Speech Recognition</h2>
+                        <h4 class="blog-date">March 25, 2021</h3> 
+                        <p>Implement <strong>"Hi Siri"</strong> voice command </p>
+                        <a href="pages/blog-post-speech-recognition.html" class="button">Read more &rarr;</a> 
+                    </div>
+                </div>
+            </div>
+            <footer class="box">
+                Made by <a href="https://github.com/Brandon-HY-Lin">Brandon Lin</a>
+            </footer>
+        </div>
+    </body>
+</html>

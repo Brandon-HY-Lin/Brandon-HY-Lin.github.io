@@ -1,0 +1,213 @@
+.blog-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	
+	/*
+		explanation 1: https://stackoverflow.com/questions/51285308/how-do-min-content-and-max-content-work
+		explanation 2: https://o7planning.org/12557/the-keywords-min-content-max-content-fit-content-stretch-in-css
+	*/
+	grid-template-rows: 100px 50px 1fr min-content min-content 50px;
+	grid-template-areas:
+		"hd hd"
+		"nav nav"
+		"main main"
+		"bio bio"
+		"share share"
+		"ft ft";
+}
+
+
+/* semantic element*/
+article {
+	grid-area: main;
+}
+
+.blog-post {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	padding: 1rem;
+	box-shadow: 2px 2px 6px grey;
+	margin: 1rem;
+}
+
+.blog-post-img {
+	width: 80%;
+}
+
+.blog-intro {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+/*
+	explanation of blockquote: 
+		https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/
+*/
+blockquote {
+	border-left: 2px solid #66d7d1;
+	padding: 0.5rem;
+	font-size: 1.1em;
+}
+
+
+
+#share {
+	grid-area: share;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.social-icon {
+	height: 100%;
+	width: auto;
+	padding: 0.5rem;
+	
+	/*
+		example: https://developer.mozilla.org/en-US/docs/Web/CSS/filter
+	*/
+	filter: opacity(0.6);
+	transition: filter 0.5s;
+}
+
+.social-link {
+	margin: 1rem;
+}
+
+.social-icon:hover {
+	filter: opacity(1);
+}
+
+
+
+#bio {
+	grid-area: bio;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	padding: 1rem;
+	justify-content: space-between;
+}
+
+.bio-image-container {
+	display: flex;
+	justify-content: center;
+	margin: auto 0;
+	max-width: 100%;
+}
+
+.bio-description {
+	max-width: 100%;
+}
+
+#bio-icon {
+	width: 20%;
+	border-radius: 50%;
+	border: 6px solid #66d7d1;
+}
+
+
+/* responsive layout */
+@media(min-width: 900px) {
+	.blog-container {
+		/*display: grid;*/
+		grid-template-columns: repeat(8, 1fr); /*50% 50%;*/
+	
+		/*
+			explanation 1: https://stackoverflow.com/questions/51285308/how-do-min-content-and-max-content-work
+			explanation 2: https://o7planning.org/12557/the-keywords-min-content-max-content-fit-content-stretch-in-css
+		*/
+		grid-template-rows: 100px 1fr 1fr 2fr 50px; /*100px 50px 1fr min-content min-content 50px;*/
+		grid-template-areas:
+			"hd hd hd hd hd hd hd hd"
+            "main main main main main main nav nav"
+            "main main main main main main bio bio"
+            "main main main main main main share share"
+            "ft ft ft ft ft ft ft ft";
+		/*
+			"hd hd"
+			"nav nav"
+			"main main"
+			"bio bio"
+			"share share"
+			"ft ft";
+		*/
+		
+	}
+
+
+
+	.blog-post {
+		/*
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: white;
+		padding: 1rem;
+		box-shadow: 2px 2px 6px grey;
+		margin: 1rem;
+		*/
+		margin: 2rem;
+		padding: 2rem;
+	}
+
+	.sidebar {
+		max-width: 80%;
+	}
+	
+	/*
+		explanation of blockquote: 
+			https://css-tricks.com/quoting-in-html-quotations-citations-and-blockquotes/
+	*/
+	blockquote {
+		/* border-left: 2px solid #66d7d1;*/
+		padding: 1rem; /*0.5rem;*/
+		font-size: 1.2em; /*1.1em;*/
+	}
+
+	#bio {
+		/*
+		grid-area: bio;
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		padding: 1rem;
+		*/
+		justify-content: flex-start; /*space-between;*/
+		padding-top: 5rem;
+		max-width: 80%;
+		grid-row-start: 2;
+		margin-top: 3rem;
+		z-index: -1;
+	}
+
+	#bio-icon {
+		/* enlarge icon at full screen*/
+		width: 80%;
+	}
+	
+	.bio-image-container {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto; /*auto 0;*/
+		max-width: 100%;
+	}
+
+	.bio-description {
+		max-width: 100%;
+	}
+
+	#share {
+		/*
+		grid-area: share;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		*/
+		
+		grid-row-start: 2;
+		width: 80%;
+	}
+}
