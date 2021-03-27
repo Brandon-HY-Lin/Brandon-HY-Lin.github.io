@@ -54,7 +54,15 @@ for (s of sections)
 
 
 // Scroll to anchor ID using scrollTO event
-
+function smoothScroll(event) {
+  event.preventDefault();
+  const element = document.querySelector(`section${event.target.hash}`);
+  scrollTo( {
+    top: element.offsetTop,
+    left: 0,
+    behavior: 'smooth'
+  });
+}
 
 /**
  * End Main Functions
@@ -66,6 +74,7 @@ for (s of sections)
 document.querySelector('#navbar__list').appendChild(fragment);
 
 // Scroll to section on link click
+navbar.addEventListener('click', smoothScroll);
 
 // Set sections as active
 
