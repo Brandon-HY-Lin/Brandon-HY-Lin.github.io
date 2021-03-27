@@ -88,6 +88,36 @@ section {
     transition: ease 0.3s all;
 }
 
+#navbar__list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* elelemtn > element selector
+   
+   actual effect: 
+   	if "li" is the child of elements with id="nvabar__list",
+	then apply "flex: 0 50%"
+
+   explanation: https://www.geeksforgeeks.org/css-element-element-selector-2/?ref=rp
+*/
+#navbar__list > li {
+	/* set navbar as 2 rows
+	   
+	   explanation: https://css-tricks.com/almanac/properties/f/flex/
+	*/
+	flex: 0 50%;
+}
+
+/* if the device width > 700px,
+   display flex in 1 row instead of 2 rows.
+*/
+@media (min-width: 700px) {
+	#navbar__list {
+		display: block;
+	}
+}
+
 /* Header Styles */
 .page__header {
     background: #fff;
