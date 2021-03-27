@@ -18,6 +18,9 @@
  * 
 */
 
+// find all HTML section tags
+const sections = document.querySelectorAll('section');
+const navbar = document.querySelector('.navbar__menu');
 
 /**
  * End Global Variables
@@ -34,7 +37,18 @@
 */
 
 // build the nav
+const fragment = document.createDocumentFragment();
 
+/* project requirement: Navigation is built dynamically as an unordered list.
+  
+  iterate all section elements
+*/
+for (s of sections) 
+{
+  const listElement = document.createElement('li');
+  listElement.innerHTML = `<a href="#${s.id}" class="menu__link">${s.dataset.nav}</a>`;
+  fragment.appendChild(listElement);
+}
 
 // Add class 'active' to section when near top of viewport
 
@@ -49,6 +63,7 @@
 */
 
 // Build menu 
+document.querySelector('#navbar__list').appendChild(fragment);
 
 // Scroll to section on link click
 
